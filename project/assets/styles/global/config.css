@@ -1,0 +1,24 @@
+/* COLORS */
+:root {
+    --primary-color: #161C2D;
+    --secondary-color: #FFFFFF;
+    --bg_green-color: #68D5851A;
+    --blue-color: #473BF0;
+    --lightgreen-color: #68D585;
+    --red-color: #F64B4B;
+    --bg_lightgrey-color: #F4F7FA;
+    --navbar_link-color: #FB6D45;
+
+
+/* FONTS */
+
+/* rubik */
+--rubik: "Rubik", sans-serif;
+--rubik-700: 700;
+
+/* roboto */
+--roboto: "Roboto", sans-serif;
+--roboto-700: 700;
+--roboto-400: 400;
+
+}
