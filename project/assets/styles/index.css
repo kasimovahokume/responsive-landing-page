@@ -50,3 +50,285 @@
     border-radius: 5px;
     padding: 10px;
 }
+
+/* ============ ABOUT SECTION ============ */
+#about {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Başlıq */
+#about h2 {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+/* Başlığın altında xətt */
+#about h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Container - sol və sağ tərəf */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* Sol tərəf - mətn */
+.about-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+}
+
+.about-info h3 {
+    font-size: 24px;
+    color: #2563eb;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.about-info p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 25px;
+}
+
+/* Support box - qırmızımtıl fon */
+.support-box {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    padding: 20px 25px;
+    border-radius: 12px;
+    border-left: 4px solid #dc2626;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.1);
+}
+
+.support-box strong {
+    display: block;
+    color: #991b1b;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.support-box a {
+    color: #dc2626;
+    font-size: 13px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.support-box a:hover {
+    color: #991b1b;
+    text-decoration: underline;
+}
+
+/* Kartlar - sağ tərəf */
+.about-cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 50px 45px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    min-width: 180px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+    border-color: #2563eb;
+}
+
+.card h3 {
+    font-size: 52px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.card p {
+    font-size: 15px;
+    color: #64748b;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    #about {
+        padding: 60px 20px;
+    }
+    
+    #about h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .about-cards {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .card {
+        width: 100%;
+        padding: 40px 30px;
+    }
+    
+    .card h3 {
+        font-size: 42px;
+    }
+}
+
+/* ============ GALLERY SECTION ============ */
+#gallery {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+}
+
+/* Başlıq */
+#gallery h2 {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+#gallery h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* ========== FLEXBOX CONTAINER ========== */
+.gallery-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Böyük şəkil - sol yuxarı (2/3 en) */
+.gallery-item.big {
+    flex: 2 1 600px;
+    height: 300px;
+}
+
+/* Kiçik şəkil - sağ yuxarı (1/3 en) */
+.gallery-item.small {
+    flex: 1 1 300px;
+    height: 300px;
+}
+
+/* Orta şəkil - aşağı (tam en) */
+.gallery-item.medium {
+    flex: 1 1 100%;
+    height: 300px;
+}
+
+/* Hər bir şəkil qutusu */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 16px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+/* Hover - qutu qalxsın */
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+}
+
+/* Şəkillər */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Hover - şəkil zoom */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Gradient overlay (hover-də) */
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    #gallery {
+        padding: 60px 20px;
+    }
+    
+    #gallery h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    /* Mobildə hamısı tam en */
+    .gallery-item.big,
+    .gallery-item.small,
+    .gallery-item.medium {
+        flex: 1 1 100%;
+        height: 250px;
+    }
+}
