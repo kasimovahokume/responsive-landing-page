@@ -111,6 +111,101 @@ section {
   }
 }
 
+/* ============ HAMBURGER MENYU ============ */
+.hamburger {
+    display: none; /* Desktop-da gizli */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger "X" olsun (active class) */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ============ MOBILE MENYU ============ */
+@media (max-width: 768px) {
+    /* Hamburger görünür */
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Nav gizli - sağdan gəlir */
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: white;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s ease;
+        padding-top: 80px;
+        z-index: 1000;
+    }
+    
+    /* Nav aktiv olanda (JS ilə) */
+    .navbar.active {
+        right: 0;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .nav-link {
+        font-size: 18px;
+        display: block;
+        padding: 10px 0;
+    }
+    
+    /* Menyu açıq olanda arxa qaralar */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 /* ============ HERO SECTION ============ */
 #hero {
   min-height: 100vh;
